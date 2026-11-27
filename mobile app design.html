@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Org Hub — Looma Org</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'brand-lavender': '#B48DE6',
+        'on-brand-lavender': '#232323',
+        'brand-coral': '#F24646',
+        'on-brand-coral': '#1F1F1F',
+        'brand-charcoal': '#232323',
+        'on-brand-charcoal': '#FFFFFF',
+        'brand-stone': '#EEEDEA',
+        'on-brand-stone': '#232323',
+        'success': '#1F7A4C',
+        'on-success': '#FFFFFF',
+        'warning': '#B25E09',
+        'on-warning': '#FFFFFF',
+        'light-primary': '#714CA0',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#B48DE6',
+        'light-on-primary-container': '#232323',
+        'light-secondary': '#232323',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#E2DFDE',
+        'light-on-secondary-container': '#232323',
+        'light-tertiary': '#BA1A24',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#F24646',
+        'light-on-tertiary-container': '#1F1F1F',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FFDAD6',
+        'light-on-error-container': '#93000A',
+        'light-background': '#FAF9F6',
+        'light-on-background': '#1B1C1A',
+        'light-surface': '#FAF9F6',
+        'light-surface-dim': '#DBDAD7',
+        'light-surface-bright': '#FFFFFF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F5F3F0',
+        'light-surface-container': '#EEEDEA',
+        'light-surface-container-high': '#E9E8E5',
+        'light-surface-container-highest': '#E3E2DF',
+        'light-on-surface': '#1B1C1A',
+        'light-surface-variant': '#E9DFEE',
+        'light-on-surface-variant': '#4A4450',
+        'light-outline': '#7C7481',
+        'light-outline-variant': '#CDC3D2',
+        'light-inverse-surface': '#232323',
+        'light-inverse-on-surface': '#FAF9F6',
+        'light-inverse-primary': '#D9B9FF',
+        'dark-primary': '#D9B9FF',
+        'dark-on-primary': '#401A6E',
+        'dark-primary-container': '#B48DE6',
+        'dark-on-primary-container': '#232323',
+        'dark-secondary': '#C8C6C5',
+        'dark-on-secondary': '#232323',
+        'dark-secondary-container': '#474746',
+        'dark-on-secondary-container': '#F3F0EF',
+        'dark-tertiary': '#FFB3AE',
+        'dark-on-tertiary': '#68000B',
+        'dark-tertiary-container': '#F24646',
+        'dark-on-tertiary-container': '#1F1F1F',
+        'dark-error': '#FFB4AB',
+        'dark-on-error': '#690005',
+        'dark-error-container': '#93000A',
+        'dark-on-error-container': '#FFDAD6',
+        'dark-background': '#121412',
+        'dark-on-background': '#E3E2DF',
+        'dark-surface': '#121412',
+        'dark-surface-dim': '#121412',
+        'dark-surface-bright': '#383938',
+        'dark-surface-container-lowest': '#0D0F0D',
+        'dark-surface-container-low': '#1B1C1A',
+        'dark-surface-container': '#1F201E',
+        'dark-surface-container-high': '#292A29',
+        'dark-surface-container-highest': '#343533',
+        'dark-on-surface': '#E3E2DF',
+        'dark-surface-variant': '#4A4450',
+        'dark-on-surface-variant': '#CDC3D2',
+        'dark-outline': '#968E9B',
+        'dark-outline-variant': '#4A4450',
+        'dark-inverse-surface': '#E3E2DF',
+        'dark-inverse-on-surface': '#232323',
+        'dark-inverse-primary': '#714CA0',
+      },
+      borderRadius: {
+        'sm': '8px',
+        'DEFAULT': '12px',
+        'md': '16px',
+        'lg': '20px',
+        'xl': '24px',
+        '2xl': '32px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'gutter-2xl': '32px',
+        'section': '40px',
+        'page-margin-mobile': '20px',
+        'page-margin-web': '32px',
+      },
+      fontFamily: {
+        'display': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'headline': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'title': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'body': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'label': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'mono': ['"JetBrains Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['40px', { lineHeight: '46px', letterSpacing: '-0.75px', fontWeight: '600' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.5px', fontWeight: '600' }],
+        'headline-lg': ['36px', { lineHeight: '42px', letterSpacing: '-0.5px', fontWeight: '600' }],
+        'headline-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.4px', fontWeight: '600' }],
+        'headline-md': ['24px', { lineHeight: '30px', letterSpacing: '-0.25px', fontWeight: '600' }],
+        'headline-sm': ['20px', { lineHeight: '26px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.1px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'mono-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '260ms',
+        'surface-exit': '160ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased">
+  <div class="min-h-[884px] max-w-md mx-auto bg-light-surface px-page-margin-mobile pt-gutter-xl pb-28 flex flex-col gap-gutter-xl" data-stitch-vh="min-h-[884px]===min-h-screen">
+
+    <!-- Top Workspace Header -->
+    <header class="flex items-center justify-between gap-gutter-md">
+      <button type="button" class="inline-flex items-center gap-gutter-xs text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary rounded-lg">
+        <h1 data-design-text-token="headline-lg-mobile" class="font-headline text-headline-lg-mobile text-light-on-surface">Looma Ops</h1>
+        <span class="material-symbols-outlined text-headline-md text-light-on-surface" aria-hidden="true">keyboard_arrow_down</span>
+      </button>
+      <div class="flex items-center gap-gutter-sm">
+        <button data-component-id="button-icon" data-component-type="button" data-component-variant="icon" type="button" aria-label="Notifications" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-brand-stone text-on-brand-stone transition-colors duration-state-change hover:bg-light-surface-container-high">
+          <span class="material-symbols-outlined text-headline-sm" aria-hidden="true">notifications</span>
+        </button>
+        <div data-component-id="avatar-image" data-component-type="avatar" data-component-variant="image" role="img" aria-label="Maya Lin" class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-light-surface-container-lowest shrink-0">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrAWoofSFzGRxwWX6A5Fp3P7TVGe_z0Ur0wd-v8hCr1rXi0uV0t-HARifUt6HHe31XBoPcFb2zgQBXsPsWWgYOkmPurCcpNMpSh_m_PsrZhCN92KvjorFBUlRuR_F7Zz9YHt0kaCWUmh5BNQVJsedwnUjNfOLHItpyCLsGRNFRqvbs7nlFRQ4TVdokpxQTSRUseG6WBl6GgIP7iIzmMv-m6faIOE9d405C36cjcibRLsTydAl_o" alt="Maya Lin" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </header>
+
+    <!-- High-Contrast Charcoal Week Strip -->
+    <nav aria-label="Sprint week days" class="rounded-2xl bg-brand-charcoal text-on-brand-charcoal p-gutter-sm grid grid-cols-6 gap-gutter-xs">
+      <button type="button" data-day="22" class="day-pill flex flex-col items-center justify-center py-gutter-sm rounded-xl text-on-brand-charcoal transition-colors duration-state-change hover:bg-light-surface-container-highest hover:text-light-on-surface">
+        <span data-design-text-token="label-sm" class="font-label text-label-sm opacity-75">Sun</span>
+        <span data-design-text-token="title-md" class="font-headline text-title-md tabular-nums">22</span>
+      </button>
+      <button type="button" data-day="23" class="day-pill flex flex-col items-center justify-center py-gutter-sm rounded-xl text-on-brand-charcoal transition-colors duration-state-change hover:bg-light-surface-container-highest hover:text-light-on-surface">
+        <span data-design-text-token="label-sm" class="font-label text-label-sm opacity-75">Mon</span>
+        <span data-design-text-token="title-md" class="font-headline text-title-md tabular-nums">23</span>
+      </button>
+      <button type="button" data-day="24" class="day-pill flex flex-col items-center justify-center py-gutter-sm rounded-xl text-on-brand-charcoal transition-colors duration-state-change hover:bg-light-surface-container-highest hover:text-light-on-surface">
+        <span data-design-text-token="label-sm" class="font-label text-label-sm opacity-75">Tue</span>
+        <span data-design-text-token="title-md" class="font-headline text-title-md tabular-nums">24</span>
+      </button>
+      <button type="button" data-day="25" class="day-pill flex flex-col items-center justify-center py-gutter-sm rounded-xl text-on-brand-charcoal transition-colors duration-state-change hover:bg-light-surface-container-highest hover:text-light-on-surface">
+        <span data-design-text-token="label-sm" class="font-label text-label-sm opacity-75">Wed</span>
+        <span data-design-text-token="title-md" class="font-headline text-title-md tabular-nums">25</span>
+      </button>
+      <button type="button" data-day="26" aria-pressed="true" class="day-pill flex flex-col items-center justify-center py-gutter-sm rounded-xl bg-brand-lavender text-on-brand-lavender transition-colors duration-state-change">
+        <span data-design-text-token="label-sm" class="font-label text-label-sm">Thu</span>
+        <span data-design-text-token="title-md" class="font-headline text-title-md tabular-nums">26</span>
+      </button>
+      <button type="button" data-day="27" class="day-pill flex flex-col items-center justify-center py-gutter-sm rounded-xl text-on-brand-charcoal transition-colors duration-state-change hover:bg-light-surface-container-highest hover:text-light-on-surface">
+        <span data-design-text-token="label-sm" class="font-label text-label-sm opacity-75">Fri</span>
+        <span data-design-text-token="title-md" class="font-headline text-title-md tabular-nums">27</span>
+      </button>
+    </nav>
+
+    <!-- Primary Project & Schedule Feed -->
+    <main class="flex flex-col gap-gutter-lg">
+
+      <!-- Featured Lavender Project Card -->
+      <a href="#q4-mobile-core" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="rounded-xl bg-brand-lavender text-on-brand-lavender p-gutter-xl flex flex-col gap-gutter-md transition-transform duration-state-change hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal">
+        <header class="flex items-center justify-between gap-gutter-md">
+          <div class="flex items-center -space-x-2">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrC1S2uRFxeTr8UaWaYmyaeUEERoW10MTpsxIWHTIdK0piSvvd_b3GZ41BB_DPOYv8as0zScariRPFb2E61Tmeu7w7rKTYlY0j7WTv2l_lpEaaBRy7nGS5V_UkY8BcjOjVgkzORj80xiyE_UpvmvKriErl7lN1x6ix0R2qlliKfMArhSGxOLlqV9upkoMCSbiKePw4vE-YQwwSB_owpucAgSblKuoljMWwNzSaeq6aOcwn7hjO8" alt="Liam Chen" class="w-9 h-9 rounded-full object-cover ring-2 ring-brand-lavender">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrAWoofSFzGRxwWX6A5Fp3P7TVGe_z0Ur0wd-v8hCr1rXi0uV0t-HARifUt6HHe31XBoPcFb2zgQBXsPsWWgYOkmPurCcpNMpSh_m_PsrZhCN92KvjorFBUlRuR_F7Zz9YHt0kaCWUmh5BNQVJsedwnUjNfOLHItpyCLsGRNFRqvbs7nlFRQ4TVdokpxQTSRUseG6WBl6GgIP7iIzmMv-m6faIOE9d405C36cjcibRLsTydAl_o" alt="Maya Lin" class="w-9 h-9 rounded-full object-cover ring-2 ring-brand-lavender">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrD_w7tl4VWkCiuPzLjFRNL8VlkglfdY3GKYnEZPBgaQfordG7RLPcd_gbTE9U5QuH6ykbCkAGzhAJPb3d5Lg25E52AU6FRvmPI0-7XvpVbmQQUNwYyb-rKXQeBZ5qwB_7LpBjioNv3pVw23X4mwy1dBdzANacZMcTWLDsQMJhZCX69NlhzBCs_MFs3sWY0UQZM789_s_YYzFfYupM-9yQi7_Z6uhub2nEi4vPrWvuIb0QzsxjR4Iw" alt="Claire Vance" class="w-9 h-9 rounded-full object-cover ring-2 ring-brand-lavender">
+          </div>
+          <span data-design-text-token="label-md" class="font-label text-label-md tabular-nums bg-light-surface-container-lowest text-light-on-surface px-gutter-md py-gutter-xs rounded-full inline-flex items-center gap-gutter-xs">
+            <span>12:00 PM</span>
+            <span class="material-symbols-outlined text-title-md text-light-primary" aria-hidden="true">videocam</span>
+          </span>
+        </header>
+        <div class="flex flex-col gap-gutter-xs">
+          <div class="flex items-center gap-gutter-sm">
+            <h2 data-design-text-token="headline-md" class="font-headline text-headline-md">Q4 Mobile Core</h2>
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-charcoal text-on-brand-charcoal shrink-0">
+              <span class="material-symbols-outlined text-body-md" aria-hidden="true">check</span>
+            </span>
+          </div>
+          <p data-design-text-token="body-md" class="font-body text-body-md text-pretty">Sprint review and blocker check across iOS &amp; Android squads</p>
+        </div>
+      </a>
+
+      <!-- Warm Stone Project Card 1 -->
+      <article data-component-id="card-action" data-component-type="card" data-component-variant="action" class="rounded-xl bg-brand-stone text-on-brand-stone p-gutter-xl flex flex-col gap-gutter-md">
+        <header class="flex items-center justify-between gap-gutter-md">
+          <div class="flex items-center -space-x-2">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrD_w7tl4VWkCiuPzLjFRNL8VlkglfdY3GKYnEZPBgaQfordG7RLPcd_gbTE9U5QuH6ykbCkAGzhAJPb3d5Lg25E52AU6FRvmPI0-7XvpVbmQQUNwYyb-rKXQeBZ5qwB_7LpBjioNv3pVw23X4mwy1dBdzANacZMcTWLDsQMJhZCX69NlhzBCs_MFs3sWY0UQZM789_s_YYzFfYupM-9yQi7_Z6uhub2nEi4vPrWvuIb0QzsxjR4Iw" alt="Claire Vance" class="w-9 h-9 rounded-full object-cover ring-2 ring-brand-stone">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrAIuRQysPhuGtDc9wQV9wpzJgrF8h6LMNRctyxz3gMIWuxlplNbzwOw03zSM7o37oO-8WfjgciDgSf_QqagzjKPhjdL0dJBCGyOvvJy4E61j-PZXkhku_vczi5mqvHegJR9gNOf1GBBQIMkQWOfFhQaUK0qeFHfLUNF6x1zbOzypRT0GBwCmMzs0txHr7m0UvVBy09kO8wN7X4V1FzYXe76nRMxoaTvTsleVmrKw8q-XNXAW00" alt="Omar Haddad" class="w-9 h-9 rounded-full object-cover ring-2 ring-brand-stone">
+          </div>
+          <span data-design-text-token="label-md" class="font-label text-label-md tabular-nums bg-light-surface-container-lowest text-light-on-surface px-gutter-md py-gutter-xs rounded-full inline-flex items-center gap-gutter-xs">
+            <span>2:00 PM</span>
+            <span class="material-symbols-outlined text-title-md text-light-primary" aria-hidden="true">palette</span>
+          </span>
+        </header>
+        <div class="flex flex-col gap-gutter-xs">
+          <div class="flex items-center gap-gutter-sm">
+            <h2 data-design-text-token="headline-md" class="font-headline text-headline-md">Design System v2</h2>
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-charcoal text-on-brand-charcoal shrink-0">
+              <span class="material-symbols-outlined text-body-md" aria-hidden="true">arrow_forward</span>
+            </span>
+          </div>
+          <p data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface-variant text-pretty">Token parity audit for shared web and mobile kits</p>
+        </div>
+      </article>
+
+      <!-- Warm Stone Project Card 2 -->
+      <article data-component-id="card-action" data-component-type="card" data-component-variant="action" class="rounded-xl bg-brand-stone text-on-brand-stone p-gutter-xl flex flex-col gap-gutter-md">
+        <header class="flex items-center justify-between gap-gutter-md">
+          <div class="flex items-center -space-x-2">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrAWoofSFzGRxwWX6A5Fp3P7TVGe_z0Ur0wd-v8hCr1rXi0uV0t-HARifUt6HHe31XBoPcFb2zgQBXsPsWWgYOkmPurCcpNMpSh_m_PsrZhCN92KvjorFBUlRuR_F7Zz9YHt0kaCWUmh5BNQVJsedwnUjNfOLHItpyCLsGRNFRqvbs7nlFRQ4TVdokpxQTSRUseG6WBl6GgIP7iIzmMv-m6faIOE9d405C36cjcibRLsTydAl_o" alt="Maya Lin" class="w-9 h-9 rounded-full object-cover ring-2 ring-brand-stone">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrAIuRQysPhuGtDc9wQV9wpzJgrF8h6LMNRctyxz3gMIWuxlplNbzwOw03zSM7o37oO-8WfjgciDgSf_QqagzjKPhjdL0dJBCGyOvvJy4E61j-PZXkhku_vczi5mqvHegJR9gNOf1GBBQIMkQWOfFhQaUK0qeFHfLUNF6x1zbOzypRT0GBwCmMzs0txHr7m0UvVBy09kO8wN7X4V1FzYXe76nRMxoaTvTsleVmrKw8q-XNXAW00" alt="Omar Haddad" class="w-9 h-9 rounded-full object-cover ring-2 ring-brand-stone">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrC1S2uRFxeTr8UaWaYmyaeUEERoW10MTpsxIWHTIdK0piSvvd_b3GZ41BB_DPOYv8as0zScariRPFb2E61Tmeu7w7rKTYlY0j7WTv2l_lpEaaBRy7nGS5V_UkY8BcjOjVgkzORj80xiyE_UpvmvKriErl7lN1x6ix0R2qlliKfMArhSGxOLlqV9upkoMCSbiKePw4vE-YQwwSB_owpucAgSblKuoljMWwNzSaeq6aOcwn7hjO8" alt="Liam Chen" class="w-9 h-9 rounded-full object-cover ring-2 ring-brand-stone">
+          </div>
+          <span data-design-text-token="label-md" class="font-label text-label-md tabular-nums bg-light-surface-container-lowest text-light-on-surface px-gutter-md py-gutter-xs rounded-full inline-flex items-center gap-gutter-xs">
+            <span>4:00 PM</span>
+            <span class="material-symbols-outlined text-title-md text-light-primary" aria-hidden="true">public</span>
+          </span>
+        </header>
+        <div class="flex flex-col gap-gutter-xs">
+          <div class="flex items-center gap-gutter-sm">
+            <h2 data-design-text-token="headline-md" class="font-headline text-headline-md">Client Portal Web</h2>
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-charcoal text-on-brand-charcoal shrink-0">
+              <span class="material-symbols-outlined text-body-md" aria-hidden="true">arrow_forward</span>
+            </span>
+          </div>
+          <p data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface-variant text-pretty">Define onboarding priorities for enterprise workspaces</p>
+        </div>
+      </article>
+
+      <!-- Coral Urgent Release Window Card -->
+      <div role="button" tabindex="0" data-component-id="card-interactive-2" data-component-type="card" data-component-variant="interactive" class="rounded-xl bg-brand-coral text-on-brand-coral p-gutter-xl flex items-center justify-between gap-gutter-md cursor-pointer transition-transform duration-state-change hover:-translate-y-0.5">
+        <div class="flex flex-col gap-gutter-xs">
+          <h3 data-design-text-token="title-md" class="font-headline text-title-md">Release sign-off</h3>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm">QA gate &amp; production deploy window</p>
+        </div>
+        <span data-design-text-token="label-md" class="font-label text-label-md tabular-nums bg-light-surface-container-lowest text-light-on-surface px-gutter-md py-gutter-xs rounded-full shrink-0">5:00 PM</span>
+      </div>
+
+    </main>
+
+    <!-- Floating Charcoal Bottom Navigation -->
+    <nav aria-label="Primary mobile navigation" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-[350px] z-20 rounded-full bg-brand-charcoal text-on-brand-charcoal p-gutter-sm grid grid-cols-4 gap-gutter-xs shadow-lg">
+      <a href="#projects" aria-current="page" class="flex flex-col items-center justify-center py-gutter-sm rounded-full bg-brand-lavender text-on-brand-lavender">
+        <span class="material-symbols-outlined text-headline-sm" aria-hidden="true">grid_view</span>
+        <span data-design-text-token="label-sm" class="font-label text-label-sm">Projects</span>
+      </a>
+      <a href="#schedule" class="flex flex-col items-center justify-center py-gutter-sm rounded-full text-on-brand-charcoal hover:bg-light-surface-container-highest hover:text-light-on-surface transition-colors duration-state-change">
+        <span class="material-symbols-outlined text-headline-sm" aria-hidden="true">calendar_today</span>
+        <span data-design-text-token="label-sm" class="font-label text-label-sm">Schedule</span>
+      </a>
+      <a href="#team" class="flex flex-col items-center justify-center py-gutter-sm rounded-full text-on-brand-charcoal hover:bg-light-surface-container-highest hover:text-light-on-surface transition-colors duration-state-change">
+        <span class="material-symbols-outlined text-headline-sm" aria-hidden="true">group</span>
+        <span data-design-text-token="label-sm" class="font-label text-label-sm">Team</span>
+      </a>
+      <a href="#settings" class="flex flex-col items-center justify-center py-gutter-sm rounded-full text-on-brand-charcoal hover:bg-light-surface-container-highest hover:text-light-on-surface transition-colors duration-state-change">
+        <span class="material-symbols-outlined text-headline-sm" aria-hidden="true">settings</span>
+        <span data-design-text-token="label-sm" class="font-label text-label-sm">Settings</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <script>
+    (function () {
+      const pills = document.querySelectorAll('.day-pill');
+      pills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          pills.forEach(function (p) {
+            p.classList.remove('bg-brand-lavender', 'text-on-brand-lavender');
+            p.classList.add('text-on-brand-charcoal');
+            p.setAttribute('aria-pressed', 'false');
+          });
+          pill.classList.remove('text-on-brand-charcoal');
+          pill.classList.add('bg-brand-lavender', 'text-on-brand-lavender');
+          pill.setAttribute('aria-pressed', 'true');
+        });
+      });
+    })();
+  </script>
+
+
+</body></html>
